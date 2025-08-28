@@ -1,7 +1,12 @@
-// Core system
+
+// Core - Variables and Mixins first
 @import 'core/ui/variables';
 @import 'core/ui/mixins';
+
+// Core - Typography
 @import 'core/typography/typography';
+
+// Core - Base Layout
 @import 'core/layouts/base';
 
 // Components
