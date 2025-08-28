@@ -1,13 +1,13 @@
-html,
-body {
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,46 +16,53 @@ body {
 }
 
 .business-card {
-  width: 350px;
-  height: 200px;
-  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(25, 118, 210, 0.3);
+  width: 380px;
+  height: 240px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
-  color: white;
-  padding: 25px;
+  color: #1e293b;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
 }
 
 .business-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(25, 118, 210, 0.4);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 35px 70px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .business-card::before {
   content: "";
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #667eea20, #764ba220);
+  border-radius: 0 20px 0 100%;
+  z-index: 1;
 }
 
 .business-card::after {
   content: "";
   position: absolute;
-  bottom: -30%;
-  left: -30%;
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.05);
+  bottom: -20px;
+  left: -20px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #667eea15, #764ba215);
   border-radius: 50%;
+  z-index: 1;
 }
 
 .header {
@@ -64,47 +71,92 @@ body {
 }
 
 .name {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 .contact-info {
   z-index: 2;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 14px;
-  opacity: 0.95;
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+  transition: all 0.3s ease;
+  padding: 8px 0;
 }
 
-.contact-item:last-child {
-  margin-bottom: 0;
+.contact-item:hover {
+  color: #667eea;
+  transform: translateX(4px);
 }
 
 .icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
   fill: currentColor;
+  opacity: 0.8;
 }
 
 .divider {
-  width: 60px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.8);
-  margin: 10px 0;
-  border-radius: 1px;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  margin: 12px 0;
+  border-radius: 2px;
+  opacity: 0.8;
 }
 
 @media (max-width: 400px) {
   .business-card {
     width: 90vw;
-    max-width: 350px;
+    max-width: 380px;
+    height: auto;
+    min-height: 240px;
+    padding: 24px;
+  }
+  
+  .name {
+    font-size: 24px;
+  }
+  
+  .contact-item {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  }
+  
+  .business-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: #e2e8f0;
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .contact-item {
+    color: #cbd5e1;
+  }
+  
+  .contact-item:hover {
+    color: #818cf8;
   }
 }
