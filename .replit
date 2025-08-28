@@ -6,3 +6,15 @@ channel = "stable-25_05"
 
 [deployment]
 run = ["sh", "-c", " "]
+
+[workflows]
+runButton = "Watch SASS"
+
+[[workflows.workflow]]
+name = "Watch SASS"
+author = 46986662
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "sass --watch style.scss:style.css"
