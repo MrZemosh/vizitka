@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filip Zemánek - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sass@1.70.0/sass.min.js"></script>
   </head>
   <body>
     <!-- Navigation Menu -->
@@ -207,6 +207,39 @@
           }
         });
       });
+
+      // SASS Auto Compiler
+      async function compileSass() {
+        try {
+          const response = await fetch('style.scss');
+          const sassCode = await response.text();
+          
+          const css = Sass.compile(sassCode, {
+            style: 'expanded'
+          });
+          
+          // Vytvořit nebo aktualizovat style element
+          let styleElement = document.getElementById('compiled-sass');
+          if (!styleElement) {
+            styleElement = document.createElement('style');
+            styleElement.id = 'compiled-sass';
+            document.head.appendChild(styleElement);
+          }
+          styleElement.textContent = css.css;
+          
+          console.log('SASS zkompilován úspěšně!');
+        } catch (error) {
+          console.error('Chyba při kompilaci SASS:', error);
+        }
+      }
+
+      // Kompilovat SASS při načtení stránky
+      document.addEventListener('DOMContentLoaded', compileSass);
+
+      // Auto-refresh při změnách (pouze pro development)
+      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('replit')) {
+        setInterval(compileSass, 2000); // Zkontrolovat změny každé 2 sekundy
+      }
     </script>
   </body>
 </html>

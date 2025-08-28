@@ -8,7 +8,7 @@ channel = "stable-25_05"
 run = ["sh", "-c", " "]
 
 [workflows]
-runButton = "Watch SASS"
+runButton = "Live Server"
 
 [[workflows.workflow]]
 name = "Watch SASS"
@@ -18,3 +18,12 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "sass --watch style.scss:style.css"
+
+[[workflows.workflow]]
+name = "Live Server"
+author = 46986662
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 -m http.server 5000"
