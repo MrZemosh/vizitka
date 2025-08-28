@@ -1,0 +1,71 @@
+
+// Font families
+$font-primary: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+
+// Font weights
+$font-weight-normal: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Typography mixins
+@mixin heading-large {
+  font-size: 28px;
+  font-weight: $font-weight-bold;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+@mixin heading-medium {
+  font-size: 24px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+@mixin heading-small {
+  font-size: 20px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+@mixin body-large {
+  font-size: 16px;
+  font-weight: $font-weight-normal;
+  line-height: 1.6;
+}
+
+@mixin body-medium {
+  font-size: 14px;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+}
+
+@mixin body-small {
+  font-size: 13px;
+  font-weight: $font-weight-normal;
+  line-height: 1.4;
+}
+
+// Base typography
+body {
+  font-family: $font-primary;
+  @include body-medium;
+  color: $primary-color;
+}
+
+h1 {
+  @include heading-large;
+}
+
+h2 {
+  @include heading-medium;
+}
+
+h3 {
+  @include heading-small;
+}
+
+p {
+  @include body-medium;
+}

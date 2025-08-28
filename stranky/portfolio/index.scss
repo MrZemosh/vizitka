@@ -1,0 +1,307 @@
+
+// Business card komponenta
+.business-card {
+  width: 400px;
+  height: 240px;
+  @include card-style;
+  position: relative;
+  overflow: hidden;
+  color: $primary-color;
+  padding: $spacing-2xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include hover-lift;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 0 $radius-lg 0 100%;
+    z-index: 1;
+  }
+
+  .header {
+    z-index: 2;
+    position: relative;
+  }
+
+  .name {
+    @include heading-medium;
+    margin-bottom: $spacing-md;
+    color: $primary-color;
+  }
+
+  .contact-info {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    @include body-medium;
+    color: $secondary-color;
+    transition: all $transition-fast;
+    padding: $spacing-xs 0;
+
+    &:hover {
+      color: $primary-color;
+      transform: translateX(2px);
+    }
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: $spacing-md;
+    fill: currentColor;
+    opacity: 0.8;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: $border-color;
+    margin: $spacing-sm 0 $spacing-lg 0;
+    border-radius: 1px;
+  }
+}
+
+// To-Do List komponenta
+.todo-container {
+  width: 100%;
+  max-width: 480px;
+  @include card-style;
+  padding: $spacing-2xl;
+
+  .todo-title {
+    @include heading-small;
+    margin-bottom: $spacing-xl;
+    color: $primary-color;
+    text-align: center;
+  }
+
+  .todo-input-container {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+  }
+
+  .todo-input {
+    flex: 1;
+    padding: $spacing-md $spacing-lg;
+    border: 1.5px solid $border-color;
+    border-radius: $radius-md;
+    @include body-medium;
+    transition: all $transition-fast;
+    background: $background-color;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      background: $white;
+      box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+    }
+  }
+
+  .todo-add-btn {
+    @include button-style;
+    background: $primary-color;
+
+    &:hover {
+      background: $accent-color;
+    }
+
+    .todo-add-icon {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+  }
+
+  .todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      padding: $spacing-lg;
+      background: $background-color;
+      border-radius: $radius-md;
+      transition: all $transition-fast;
+      border: 1px solid transparent;
+
+      &:hover {
+        background: $light-gray;
+        border-color: $border-color;
+      }
+
+      .todo-checkbox {
+        width: 18px;
+        height: 18px;
+        margin-right: $spacing-md;
+        accent-color: $primary-color;
+
+        &:checked + .todo-label {
+          text-decoration: line-through;
+          opacity: 0.5;
+          color: #9ca3af;
+        }
+      }
+
+      .todo-label {
+        flex: 1;
+        @include body-medium;
+        color: $primary-color;
+        cursor: pointer;
+        transition: all $transition-fast;
+      }
+
+      .todo-delete {
+        background: none;
+        border: none;
+        padding: $spacing-sm;
+        border-radius: $spacing-sm;
+        cursor: pointer;
+        transition: all $transition-fast;
+        @include flex-center;
+
+        &:hover {
+          background: #fef2f2;
+        }
+
+        .delete-icon {
+          width: 14px;
+          height: 14px;
+          fill: #ef4444;
+        }
+      }
+    }
+  }
+}
+
+// Mobile responsiveness
+@include mobile {
+  .business-card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 240px;
+    padding: $spacing-xl;
+
+    .name {
+      font-size: 22px;
+    }
+
+    .contact-item {
+      @include body-small;
+    }
+  }
+
+  .todo-container {
+    width: 100%;
+    max-width: 480px;
+    padding: $spacing-xl;
+
+    .todo-title {
+      font-size: 18px;
+    }
+  }
+}
+
+// Dark mode styles
+@include dark-mode {
+  .business-card {
+    background: $dark-card-bg;
+    color: $dark-text;
+    border-color: $dark-border;
+    box-shadow: $shadow-dark;
+
+    .name {
+      color: $dark-text;
+    }
+
+    .contact-item {
+      color: $dark-secondary;
+
+      &:hover {
+        color: $dark-text;
+      }
+    }
+
+    .divider {
+      background: $dark-border;
+    }
+  }
+
+  .todo-container {
+    background: $dark-card-bg;
+    color: $dark-text;
+    border-color: $dark-border;
+    box-shadow: $shadow-dark;
+
+    .todo-title {
+      color: $dark-text;
+    }
+
+    .todo-input {
+      background: #1a1a1a;
+      border-color: #404040;
+      color: $dark-text;
+
+      &:focus {
+        border-color: $dark-text;
+        background: $dark-bg;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    .todo-add-btn {
+      background: $dark-text;
+
+      &:hover {
+        background: #e5e5e5;
+      }
+
+      .todo-add-icon {
+        fill: $primary-color;
+      }
+    }
+
+    .todo-list {
+      .todo-item {
+        background: #1a1a1a;
+        border-color: transparent;
+
+        &:hover {
+          background: $dark-border;
+          border-color: #404040;
+        }
+
+        .todo-label {
+          color: $dark-text;
+        }
+
+        .todo-checkbox:checked + .todo-label {
+          color: $dark-muted;
+        }
+
+        .todo-delete:hover {
+          background: #2d1b1b;
+        }
+      }
+    }
+  }
+}

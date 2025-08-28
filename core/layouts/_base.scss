@@ -1,0 +1,58 @@
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Base body styles
+body {
+  background: $background-color;
+  min-height: 100vh;
+  line-height: 1.6;
+  color: $primary-color;
+}
+
+// Main content container
+.main-content {
+  margin-top: 64px;
+  padding: $spacing-5xl $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-5xl;
+  min-height: calc(100vh - 64px);
+}
+
+// Container utility
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
+}
+
+// Grid utilities
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+// Responsive utilities
+@include mobile {
+  .main-content {
+    padding: $spacing-4xl $spacing-lg;
+    gap: $spacing-4xl;
+  }
+  
+  .container {
+    padding: 0 $spacing-lg;
+  }
+}

@@ -1,0 +1,128 @@
+
+.footer {
+  background: $white;
+  color: $primary-color;
+  padding: $spacing-4xl $spacing-xl $spacing-xl;
+  margin-top: auto;
+  border-top: 1px solid $border-color;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-3xl;
+    margin-bottom: $spacing-3xl;
+
+    .footer-section {
+      h3 {
+        font-size: 18px;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-lg;
+        color: $primary-color;
+        letter-spacing: -0.02em;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-md;
+        color: $accent-color;
+      }
+
+      p {
+        color: $secondary-color;
+        margin-bottom: $spacing-sm;
+        font-size: 14px;
+      }
+    }
+
+    .social-links {
+      display: flex;
+      gap: $spacing-md;
+      flex-wrap: wrap;
+
+      .social-link {
+        color: $secondary-color;
+        text-decoration: none;
+        padding: $spacing-sm $spacing-lg;
+        border: 1px solid $border-color;
+        border-radius: $spacing-sm;
+        transition: all $transition-fast;
+        font-size: 14px;
+        font-weight: $font-weight-normal;
+
+        &:hover {
+          color: $primary-color;
+          border-color: $primary-color;
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: $spacing-xl;
+    border-top: 1px solid $border-color;
+    color: #9ca3af;
+    font-size: 14px;
+  }
+}
+
+// Mobile styles
+@include mobile {
+  .footer {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: $spacing-2xl;
+      text-align: center;
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Dark mode styles
+@include dark-mode {
+  .footer {
+    background: $dark-card-bg;
+    color: $dark-text;
+    border-top-color: $dark-border;
+
+    .footer-content {
+      .footer-section {
+        h3 {
+          color: $dark-text;
+        }
+
+        h4 {
+          color: #d1d5db;
+        }
+
+        p {
+          color: $dark-secondary;
+        }
+      }
+
+      .social-links {
+        .social-link {
+          color: $dark-secondary;
+          border-color: #404040;
+
+          &:hover {
+            color: $dark-text;
+            border-color: $dark-text;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      color: $dark-muted;
+      border-top-color: $dark-border;
+    }
+  }
+}
