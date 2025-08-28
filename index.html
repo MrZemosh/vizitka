@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sass@1.70.0/sass.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sass.js@0.11.1/dist/sass.min.js"></script>
+    <style id="compiled-sass"></style>
   </head>
   <body>
     <!-- Navigation Menu -->
@@ -214,32 +215,25 @@
           const response = await fetch('style.scss');
           const sassCode = await response.text();
           
-          const css = Sass.compile(sassCode, {
-            style: 'expanded'
+          Sass.compile(sassCode, function(result) {
+            if (result.status === 0) {
+              const styleElement = document.getElementById('compiled-sass');
+              styleElement.textContent = result.text;
+              console.log('SASS zkompilován úspěšně!');
+            } else {
+              console.error('Chyba při kompilaci SASS:', result.formatted);
+            }
           });
           
-          // Vytvořit nebo aktualizovat style element
-          let styleElement = document.getElementById('compiled-sass');
-          if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'compiled-sass';
-            document.head.appendChild(styleElement);
-          }
-          styleElement.textContent = css.css;
-          
-          console.log('SASS zkompilován úspěšně!');
         } catch (error) {
-          console.error('Chyba při kompilaci SASS:', error);
+          console.error('Chyba při načítání SASS:', error);
         }
       }
 
       // Kompilovat SASS při načtení stránky
-      document.addEventListener('DOMContentLoaded', compileSass);
-
-      // Auto-refresh při změnách (pouze pro development)
-      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('replit')) {
-        setInterval(compileSass, 2000); // Zkontrolovat změny každé 2 sekundy
-      }
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(compileSass, 100); // Malé zpoždění pro načtení Sass.js
+      });
     </script>
   </body>
 </html>
