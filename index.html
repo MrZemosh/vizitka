@@ -4,235 +4,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filip Zemánek - Portfolio</title>
+    <title>iPhone 15 Pro - Apple</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sass.js@0.11.1/dist/sass.min.js"></script>
-    <style id="compiled-sass"></style>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Navigation Menu -->
+    <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
-        <div class="nav-logo">Filip Zemánek</div>
+        <div class="nav-logo">
+          <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor">
+            <path d="M8.02 16.23c-.73 0-1.86-.83-2.05-1.79-.42-2.07-.35-7.62.35-8.16.81-.62 2.04-.81 2.73-.81.81 0 2.04.27 2.85.81.35.23.58 1.79.23 3.76-.27 1.52-.73 4.29-.81 5.27-.19.96-1.32 1.79-2.05 1.79-.27 0-.27-.04-.25-.87z"/>
+          </svg>
+        </div>
         <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#home" class="nav-link">Domů</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" class="nav-link">O mně</a>
-          </li>
-          <li class="nav-item">
-            <a href="#projects" class="nav-link">Projekty</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">Kontakt</a>
-          </li>
+          <li><a href="#hero">iPhone</a></li>
+          <li><a href="#features">Funkce</a></li>
+          <li><a href="#specs">Specifikace</a></li>
+          <li><a href="#buy">Koupit</a></li>
         </ul>
-        <div class="nav-toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content" id="home">
-      <div class="business-card">
-        <div class="header">
-          <div class="name">Filip Zemánek</div>
-          <div class="divider"></div>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">iPhone 15 Pro</h1>
+        <p class="hero-subtitle">Titan. Tak silný. Tak lehký. Tak Pro.</p>
+        <div class="hero-image">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="notch"></div>
+              <div class="dynamic-island"></div>
+            </div>
+          </div>
         </div>
-
-        <div class="contact-info">
-          <div class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-              />
-            </svg>
-            Prakšice 55
-          </div>
-
-          <div class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-              />
-            </svg>
-            filipzemanek2@seznam.cz
-          </div>
-
-          <div class="contact-item">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-              />
-            </svg>
-            +420 732 xxx xxx
-          </div>
+        <div class="hero-cta">
+          <button class="cta-primary">Koupit od 32 990 Kč</button>
+          <button class="cta-secondary">Zjistit více</button>
         </div>
       </div>
+    </section>
 
-      <!-- To-Do List -->
-      <div class="todo-container">
-        <h2 class="todo-title">Moje úkoly</h2>
-        <div class="todo-input-container">
-          <input type="text" id="todoInput" class="todo-input" placeholder="Přidat nový úkol...">
-          <button onclick="addTodo()" class="todo-add-btn">
-            <svg viewBox="0 0 24 24" class="todo-add-icon">
-              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-            </svg>
-          </button>
-        </div>
-        <ul id="todoList" class="todo-list">
-          <li class="todo-item">
-            <input type="checkbox" class="todo-checkbox" id="todo1">
-            <label for="todo1" class="todo-label">Dokončit portfolio</label>
-            <button onclick="deleteTodo(this)" class="todo-delete">
-              <svg viewBox="0 0 24 24" class="delete-icon">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-              </svg>
-            </button>
-          </li>
-          <li class="todo-item">
-            <input type="checkbox" class="todo-checkbox" id="todo2">
-            <label for="todo2" class="todo-label">Aktualizovat životopis</label>
-            <button onclick="deleteTodo(this)" class="todo-delete">
-              <svg viewBox="0 0 24 24" class="delete-icon">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-              </svg>
-            </button>
-          </li>
-          <li class="todo-item">
-            <input type="checkbox" class="todo-checkbox" id="todo3" checked>
-            <label for="todo3" class="todo-label">Vytvořit moderní design</label>
-            <button onclick="deleteTodo(this)" class="todo-delete">
-              <svg viewBox="0 0 24 24" class="delete-icon">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Filip Zemánek</h3>
-          <p>Profesionální webové řešení a vývoj aplikací</p>
-        </div>
-        <div class="footer-section">
-          <h4>Kontakt</h4>
-          <p>📧 filipzemanek2@seznam.cz</p>
-          <p>📱 +420 732 xxx xxx</p>
-          <p>📍 Prakšice 55</p>
-        </div>
-        <div class="footer-section">
-          <h4>Sledujte mě</h4>
-          <div class="social-links">
-            <a href="#" class="social-link">LinkedIn</a>
-            <a href="#" class="social-link">GitHub</a>
-            <a href="#" class="social-link">Twitter</a>
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="section-title">Revoluční inovace</h2>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <div class="chip-icon"></div>
+            </div>
+            <h3>A17 Pro čip</h3>
+            <p>Nejpokročilejší čip v chytrém telefonu s GPU třídy pro konzole.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <div class="camera-icon"></div>
+            </div>
+            <h3>Titanový design</h3>
+            <p>Nejtěžší materiál ze všech, přesto nejlehčí Pro model všech dob.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <div class="usbc-icon"></div>
+            </div>
+            <h3>USB-C</h3>
+            <p>Univerzální konektivita pro nabíjení, přenos dat a připojení příslušenství.</p>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Filip Zemánek. Všechna práva vyhrazena.</p>
+    </section>
+
+    <!-- Camera Section -->
+    <section class="camera-section">
+      <div class="container">
+        <div class="camera-content">
+          <div class="camera-text">
+            <h2>Kamerový systém Pro</h2>
+            <h3>Neuvěřitelně všestranný.</h3>
+            <p>Nejpokročilejší kamerový systém Pro zahrnuje 48Mpx hlavní kameru s novým režimem 2x telefoto a novou ultraširokouhlou kameru s autofokusem.</p>
+            <ul class="camera-features">
+              <li>48Mpx hlavní kamera</li>
+              <li>12Mpx ultraširokoúhlá kamera</li>
+              <li>12Mpx telefoto kamera</li>
+              <li>3x optický zoom</li>
+            </ul>
+          </div>
+          <div class="camera-visual">
+            <div class="camera-module">
+              <div class="lens main-lens"></div>
+              <div class="lens ultra-lens"></div>
+              <div class="lens tele-lens"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </section>
+
+    <!-- Specs Section -->
+    <section class="specs" id="specs">
+      <div class="container">
+        <h2 class="section-title">Technické specifikace</h2>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <h4>Displej</h4>
+            <p>6,1" Super Retina XDR OLED<br>2556 × 1179 pixelů při 460 ppi</p>
+          </div>
+          <div class="spec-item">
+            <h4>Čip</h4>
+            <p>A17 Pro čip<br>6jádrové CPU<br>6jádrové GPU</p>
+          </div>
+          <div class="spec-item">
+            <h4>Baterie</h4>
+            <p>Až 23 hodin přehrávání videa<br>Bezdrátové nabíjení MagSafe</p>
+          </div>
+          <div class="spec-item">
+            <h4>Úložiště</h4>
+            <p>128 GB<br>256 GB<br>512 GB<br>1 TB</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="buy">
+      <div class="container">
+        <h2>iPhone 15 Pro</h2>
+        <p>Od 32 990 Kč nebo 1 374 Kč/měs. na 24 měsíců*</p>
+        <div class="cta-buttons">
+          <button class="cta-primary large">Koupit</button>
+          <button class="cta-secondary large">Zjistit více</button>
+        </div>
+      </div>
+    </section>
 
     <script>
       // Mobile menu toggle
-      const mobileMenu = document.getElementById('mobile-menu');
+      const navToggle = document.querySelector('.nav-toggle');
       const navMenu = document.querySelector('.nav-menu');
 
-      mobileMenu.addEventListener('click', () => {
-        mobileMenu.classList.toggle('is-active');
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
       });
 
-      // To-Do List functionality
-      let todoCounter = 4;
-
-      function addTodo() {
-        const input = document.getElementById('todoInput');
-        const todoText = input.value.trim();
-        
-        if (todoText === '') return;
-
-        const todoList = document.getElementById('todoList');
-        const todoId = 'todo' + todoCounter++;
-
-        const li = document.createElement('li');
-        li.className = 'todo-item';
-        li.innerHTML = `
-          <input type="checkbox" class="todo-checkbox" id="${todoId}">
-          <label for="${todoId}" class="todo-label">${todoText}</label>
-          <button onclick="deleteTodo(this)" class="todo-delete">
-            <svg viewBox="0 0 24 24" class="delete-icon">
-              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-            </svg>
-          </button>
-        `;
-
-        todoList.appendChild(li);
-        input.value = '';
-      }
-
-      function deleteTodo(button) {
-        button.parentElement.remove();
-      }
-
-      // Enter key support for todo input
-      document.getElementById('todoInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          addTodo();
-        }
-      });
-
-      // Smooth scrolling for navigation
+      // Smooth scrolling
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
           const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         });
       });
 
-      // SASS Auto Compiler
-      async function compileSass() {
-        try {
-          const response = await fetch('style.scss');
-          const sassCode = await response.text();
-          
-          Sass.compile(sassCode, function(result) {
-            if (result.status === 0) {
-              const styleElement = document.getElementById('compiled-sass');
-              styleElement.textContent = result.text;
-              console.log('SASS zkompilován úspěšně!');
-            } else {
-              console.error('Chyba při kompilaci SASS:', result.formatted);
-            }
-          });
-          
-        } catch (error) {
-          console.error('Chyba při načítání SASS:', error);
-        }
-      }
-
-      // Kompilovat SASS při načtení stránky
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(compileSass, 100); // Malé zpoždění pro načtení Sass.js
+      // Parallax effect for hero
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const phone = document.querySelector('.phone-mockup');
+        const rate = scrolled * -0.5;
+        phone.style.transform = `translateY(${rate}px)`;
       });
     </script>
   </body>
