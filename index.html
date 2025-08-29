@@ -4,150 +4,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iPhone 15 Pro - Apple</title>
+    <title>Jan Novák - Digitální Vizitka</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor">
-            <path d="M8.02 16.23c-.73 0-1.86-.83-2.05-1.79-.42-2.07-.35-7.62.35-8.16.81-.62 2.04-.81 2.73-.81.81 0 2.04.27 2.85.81.35.23.58 1.79.23 3.76-.27 1.52-.73 4.29-.81 5.27-.19.96-1.32 1.79-2.05 1.79-.27 0-.27-.04-.25-.87z"/>
-          </svg>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="#hero">iPhone</a></li>
-          <li><a href="#features">Funkce</a></li>
-          <li><a href="#specs">Specifikace</a></li>
-          <li><a href="#buy">Koupit</a></li>
-        </ul>
-        <div class="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">iPhone 15 Pro</h1>
-        <p class="hero-subtitle">Titan. Tak silný. Tak lehký. Tak Pro.</p>
-        <div class="hero-image">
-          <div class="phone-mockup">
-            <div class="phone-screen">
-              <div class="notch"></div>
-              <div class="dynamic-island"></div>
-            </div>
+    <!-- Business Card Container -->
+    <div class="business-card">
+      <!-- Front Side -->
+      <div class="card-front">
+        <div class="card-header">
+          <div class="avatar">
+            <div class="avatar-placeholder">JN</div>
+          </div>
+          <div class="header-info">
+            <h1 class="name">Jan Novák</h1>
+            <p class="title">Webový Vývojář & Designer</p>
           </div>
         </div>
-        <div class="hero-cta">
-          <button class="cta-primary">Koupit od 32 990 Kč</button>
-          <button class="cta-secondary">Zjistit více</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-      <div class="container">
-        <h2 class="section-title">Revoluční inovace</h2>
         
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <div class="chip-icon"></div>
+        <div class="card-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <span>jan.novak@email.cz</span>
             </div>
-            <h3>A17 Pro čip</h3>
-            <p>Nejpokročilejší čip v chytrém telefonu s GPU třídy pro konzole.</p>
+            <div class="contact-item">
+              <div class="contact-icon">📱</div>
+              <span>+420 777 123 456</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🌐</div>
+              <span>www.jannovak.cz</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <span>Praha, Česká republika</span>
+            </div>
           </div>
           
-          <div class="feature-card">
-            <div class="feature-icon">
-              <div class="camera-icon"></div>
+          <div class="skills">
+            <h3>Dovednosti</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">UI/UX</span>
             </div>
-            <h3>Titanový design</h3>
-            <p>Nejtěžší materiál ze všech, přesto nejlehčí Pro model všech dob.</p>
           </div>
+        </div>
+        
+        <div class="card-footer">
+          <div class="social-links">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+          <div class="qr-code">
+            <div class="qr-placeholder">QR</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Back Side (Hidden by default) -->
+      <div class="card-back">
+        <div class="back-content">
+          <h2>O mně</h2>
+          <p>Jsem vášnivý webový vývojář s více než 5 lety zkušeností v tvorbě moderních webových aplikací. Specializuji se na frontend vývoj s důrazem na uživatelský zážitek.</p>
           
-          <div class="feature-card">
-            <div class="feature-icon">
-              <div class="usbc-icon"></div>
+          <div class="achievements">
+            <div class="achievement">
+              <span class="number">50+</span>
+              <span class="label">Projektů</span>
             </div>
-            <h3>USB-C</h3>
-            <p>Univerzální konektivita pro nabíjení, přenos dat a připojení příslušenství.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Camera Section -->
-    <section class="camera-section">
-      <div class="container">
-        <div class="camera-content">
-          <div class="camera-text">
-            <h2>Kamerový systém Pro</h2>
-            <h3>Neuvěřitelně všestranný.</h3>
-            <p>Nejpokročilejší kamerový systém Pro zahrnuje 48Mpx hlavní kameru s novým režimem 2x telefoto a novou ultraširokouhlou kameru s autofokusem.</p>
-            <ul class="camera-features">
-              <li>48Mpx hlavní kamera</li>
-              <li>12Mpx ultraširokoúhlá kamera</li>
-              <li>12Mpx telefoto kamera</li>
-              <li>3x optický zoom</li>
-            </ul>
-          </div>
-          <div class="camera-visual">
-            <div class="camera-module">
-              <div class="lens main-lens"></div>
-              <div class="lens ultra-lens"></div>
-              <div class="lens tele-lens"></div>
+            <div class="achievement">
+              <span class="number">5+</span>
+              <span class="label">Let zkušeností</span>
+            </div>
+            <div class="achievement">
+              <span class="number">100%</span>
+              <span class="label">Spokojenost</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Specs Section -->
-    <section class="specs" id="specs">
-      <div class="container">
-        <h2 class="section-title">Technické specifikace</h2>
-        <div class="specs-grid">
-          <div class="spec-item">
-            <h4>Displej</h4>
-            <p>6,1" Super Retina XDR OLED<br>2556 × 1179 pixelů při 460 ppi</p>
-          </div>
-          <div class="spec-item">
-            <h4>Čip</h4>
-            <p>A17 Pro čip<br>6jádrové CPU<br>6jádrové GPU</p>
-          </div>
-          <div class="spec-item">
-            <h4>Baterie</h4>
-            <p>Až 23 hodin přehrávání videa<br>Bezdrátové nabíjení MagSafe</p>
-          </div>
-          <div class="spec-item">
-            <h4>Úložiště</h4>
-            <p>128 GB<br>256 GB<br>512 GB<br>1 TB</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="buy">
-      <div class="container">
-        <h2>iPhone 15 Pro</h2>
-        <p>Od 32 990 Kč nebo 1 374 Kč/měs. na 24 měsíců*</p>
-        <div class="cta-buttons">
-          <button class="cta-primary large">Koupit</button>
-          <button class="cta-secondary large">Zjistit více</button>
-        </div>
-      </div>
-    </section>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button class="btn-primary" data-testid="button-contact">Kontaktovat</button>
+      <button class="btn-secondary" data-testid="button-download">Stáhnout VCard</button>
+      <button class="btn-flip" data-testid="button-flip">Otočit kartu</button>
+    </div>
 
     <script>
       // Mobile menu toggle
